@@ -47,7 +47,10 @@ def forbidden(error) -> str:
 
 @app.before_request
 def authenticate_user():
-    """Authenticates a user before processing a request.
+    """
+        Authenticates a user before processing a request.
+        auth_header variable is used to retrieve the authorization header.
+        user variable is used to get the current user associated with the request
     """
     if auth:
         excluded_paths = [
